@@ -12,7 +12,7 @@ Since we do not have a backend (yet) we will use fake data from <a href="https:/
  - Users should be able to load more photos
  - Feel free to add your own requirements
 
-<img src="src/mock-up.svg" alt="a wireframe mockup showing a picture feed" />
+(img/src/mock-up.svg)
 
 We would prefer that you create a pull(merge) request to the this repo so we can easily evaluate your work.
 
