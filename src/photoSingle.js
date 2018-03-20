@@ -4,9 +4,12 @@ class photoSingle extends PureComponent {
     render() {
         return (
             <div className="single">
-                <p> Title goes here! </p>
+                <p> {this.state.title} </p>
                 <img src=""/>
+                
             </div>
         )
     }
 }
+
+export default photoSingle

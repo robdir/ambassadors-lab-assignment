@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import PhotoSingle from './photoSingle'
 import axios from 'axios'
 
 class MainContainer extends PureComponent {
@@ -20,14 +21,32 @@ class MainContainer extends PureComponent {
                     data: result.data
                 })  
             });
-    }       
+    } 
+
+    // renderSingle(content) {
+    //         this.state.data.map((content) => {
+    //             return (
+    //                 <div key={content.id} className="content">
+    //                     <p> {content.title} </p>
+    //                 </div>
+    //             );
+    //         })
+    //     }
+
+    // componentDidMount() {
+    //     this.renderSingle(this.state.data)
+    // }
 
     render() {
         return (
             <div className="maincontainer">
+                <div className="single container" id={this.state.data.map(i => i.id)}>
+                    <p> {this.state.data.map(i => i.title)} </p>
+                    <img src={this.state.data.map(i => i.url)}/>
+                </div>
             </div>
         )
-    }
+    }   
 }
 
 export default MainContainer
