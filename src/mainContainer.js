@@ -1,16 +1,26 @@
 import React, {PureComponent} from 'react'
+import axios from 'axios'
 
 class MainContainer extends PureComponent {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            data: []
+        };
+    }
 
     componentWillMount() {
-        fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_end=10')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                console.log(myJson);
+        const _this = this;
+        this.serverRequest =
+        axios
+             .get("https://jsonplaceholder.typicode.com/photos?_start=0&_end=10")
+             .then(function(result) {
+                _this.setState({
+                    data: result.data
+                })  
             });
-    }
+    }       
 
     render() {
         return (
